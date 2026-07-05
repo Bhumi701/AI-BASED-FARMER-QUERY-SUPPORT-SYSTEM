@@ -1,4 +1,4 @@
-# 🌾 AI-Based Farmer Advisory System
+# 🌾 AI-Based Farmer Query Support System
 
 Full-stack farmer advisory app: crop recommendation (RandomForest), plant disease
 detection (ResNet50 transfer learning), an AI chatbot (Gemini + govt schemes),
