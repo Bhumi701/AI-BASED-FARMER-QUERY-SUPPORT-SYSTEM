@@ -5,7 +5,7 @@
 const CONFIG = {
     // Local dev default. On Render, set this to your backend service URL,
     // e.g. "https://agri-ai-backend.onrender.com"
-    API_URL: (window.__AGRI_API_URL__ || "http://localhost:5000"),
+    API_URL: (window.__AGRI_API_URL__ || "https://agri-ai-backend-7zmv.onrender.com"),
 
     ENDPOINTS: {
         AUTH: {
