@@ -1,0 +1,11 @@
+.weather-panel { max-width: 900px; margin: 32px auto; }
+.weather-controls { display:flex; gap:8px; margin-bottom:12px; }
+.weather-controls input { flex:1; padding:8px; border-radius:6px; border:1px solid #ddd; }
+.card { background:#fff; padding:16px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-top:12px; }
+.hidden { display:none; }
+.current-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:12px; margin-top:12px; }
+.forecast-grid { display:flex; gap:12px; overflow-x:auto; padding:8px 0; }
+.forecast-item { min-width:160px; background:#f9f9f9; padding:8px; border-radius:6px; }
+.info { margin-top:8px; color:#333; }
+.error { margin-top:8px; color:#b00020; }
+.muted { color:#666; margin-top:8px; }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Advisory System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" data-i18n="nav_brand">🌾 Farmer Advisory</div>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="pages/weather.html" data-i18n="nav_weather">Weather</a>
+                <a href="pages/login.html" class="btn-primary" data-i18n="nav_login">Login</a>
+                <a href="pages/register.html" class="btn-secondary" data-i18n="nav_register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>🌾 AI-Powered Farmer Advisory System</h1>
+            <p>Smart crop recommendations, instant disease detection, and 24/7 farming guidance — all in one place.</p>
+            <div class="hero-buttons">
+                <a href="pages/register.html" class="btn-large btn-primary">Get Started Free</a>
+                <a href="pages/login.html" class="btn-large btn-secondary">Login</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>What You Get</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Crop Recommendation</h3>
+                    <p>Enter your soil's N-P-K, pH, temperature, humidity and rainfall — get the best-matched crops instantly, powered by a Random Forest model trained on real agricultural data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Disease Detection</h3>
+                    <p>Upload a photo of your crop's leaf and get an instant diagnosis with symptoms, treatment, and prevention tips — powered by ResNet50 transfer learning.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>AI Chat Assistant</h3>
+                    <p>Ask farming questions in your own words and get clear answers, including relevant government schemes you may be eligible for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌤️</div>
+                    <h3>Live Weather</h3>
+                    <p>Check current conditions and the next 24-hour forecast for your location before planning field work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Government Schemes</h3>
+                    <p>Browse PM-KISAN, PMFBY, PMKSY and other key schemes with direct links to official portals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-language</h3>
+                    <p>Use the app in English, Hindi, and more — built for farmers across India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>22+</h3>
+                    <p>Crop Types Supported</p>
+                </div>
+                <div class="stat-card">
+                    <h3>15+</h3>
+                    <p>Disease Classes Detected</p>
+                </div>
+                <div class="stat-card">
+                    <h3>8+</h3>
+                    <p>Government Schemes Listed</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>AI Assistant Availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Farmer Advisory System</p>
+        </div>
+    </footer>
+
+    <script>window.__AGRI_API_URL__ = "http://localhost:5000";</script>
+    <script src="config.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

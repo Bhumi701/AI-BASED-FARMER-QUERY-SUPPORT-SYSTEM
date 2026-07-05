@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection - Farmer Advisory</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" data-i18n="nav_brand">🌾 Farmer Advisory</div>
+            <div class="nav-links">
+                <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+                <a href="advisory-services.html" data-i18n="nav_advisory">Advisory Services</a>
+                <a href="crop-recommendation.html" data-i18n="nav_crop">Crop Recommendation</a>
+                <a href="disease-detection.html" data-i18n="nav_disease">Disease Detection</a>
+                <a href="chat.html" data-i18n="nav_chat">Chat Assistant</a>
+                <button onclick="logout()" class="btn-secondary" data-i18n="btn_logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <div class="container">
+            <h1 data-i18n="disease_title">🔬 Disease Detection</h1>
+            <p data-i18n="disease_description">Upload an image of your crop to detect diseases</p>
+
+            <div class="form-result-container">
+                <!-- Upload Form -->
+                <div class="card">
+                    <h3>Upload Plant Image</h3>
+                    <form id="diseaseForm">
+                        <div class="form-group">
+                            <label for="cropName">Crop Name</label>
+                            <select id="cropName" required>
+                                <option value="">Select Crop</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Potato">Potato</option>
+                                <option value="Maize">Maize</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="imageUpload">Plant Image</label>
+                            <input type="file" id="imageUpload" accept="image/*" required>
+                            <div id="imagePreview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Detect Disease</button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div class="card" id="resultsCard" style="display: none;">
+                    <h3>Detection Results</h3>
+                    <div id="detectionResults"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../config.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+    <script src="../assets/js/disease.js"></script>
+    <script>
+        if (!Utils.isAuthenticated()) {
+            window.location.href = 'login.html';
+        }
+
+        function logout() {
+            Utils.clearAuth();
+            window.location.href = 'login.html';
+        }
+
+        // Image preview
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').innerHTML = 
+                        `<img src="${e.target.result}" alt="Preview" style="max-width: 100%; border-radius: 8px;">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "Pepper__bell___Bacterial_spot": {
+    "crop": "Bell Pepper", "disease": "Bacterial Spot",
+    "symptoms": "Small water-soaked spots on leaves that turn dark brown/black with yellow halo; spots on fruit are raised and scab-like.",
+    "treatment": "Apply copper-based bactericides. Remove and destroy infected plant debris. Avoid overhead irrigation.",
+    "prevention": "Use certified disease-free seeds, practice crop rotation (2-3 years), avoid working in fields when leaves are wet."
+  },
+  "Pepper__bell___healthy": {
+    "crop": "Bell Pepper", "disease": "Healthy",
+    "symptoms": "No visible disease symptoms detected.",
+    "treatment": "No treatment needed.",
+    "prevention": "Continue regular monitoring, balanced fertilization, and proper irrigation."
+  },
+  "Potato___Early_blight": {
+    "crop": "Potato", "disease": "Early Blight",
+    "symptoms": "Dark brown concentric ring spots (target-board pattern) on older leaves, yellowing around lesions.",
+    "treatment": "Apply fungicides containing chlorothalonil or mancozeb. Remove infected leaves.",
+    "prevention": "Rotate crops, avoid overhead watering, ensure good plant spacing for airflow, use resistant varieties."
+  },
+  "Potato___Late_blight": {
+    "crop": "Potato", "disease": "Late Blight",
+    "symptoms": "Water-soaked pale green to black lesions on leaves, white fungal growth on undersides in humid conditions, rapid plant collapse.",
+    "treatment": "Apply fungicides (metalaxyl, mancozeb) immediately. Destroy infected plants to stop spread.",
+    "prevention": "Plant certified disease-free tubers, avoid excess irrigation, monitor closely during cool wet weather."
+  },
+  "Potato___healthy": {
+    "crop": "Potato", "disease": "Healthy",
+    "symptoms": "No visible disease symptoms detected.",
+    "treatment": "No treatment needed.",
+    "prevention": "Continue regular monitoring and balanced fertilization."
+  },
+  "Tomato_Bacterial_spot": {
+    "crop": "Tomato", "disease": "Bacterial Spot",
+    "symptoms": "Small dark, greasy-looking spots on leaves and fruit, leaves may yellow and drop.",
+    "treatment": "Apply copper-based sprays. Remove severely infected plants.",
+    "prevention": "Use disease-free seed, avoid overhead irrigation, rotate crops."
+  },
+  "Tomato_Early_blight": {
+    "crop": "Tomato", "disease": "Early Blight",
+    "symptoms": "Concentric dark rings on lower/older leaves, yellowing around lesions, stem lesions possible.",
+    "treatment": "Apply fungicide (chlorothalonil/mancozeb), remove affected foliage.",
+    "prevention": "Mulch soil, avoid wetting leaves, rotate crops, stake plants for airflow."
+  },
+  "Tomato_Late_blight": {
+    "crop": "Tomato", "disease": "Late Blight",
+    "symptoms": "Large irregular water-soaked lesions on leaves, white mold on undersides, rapid browning and plant death.",
+    "treatment": "Apply fungicides immediately (metalaxyl-based), remove and destroy infected plants.",
+    "prevention": "Avoid overhead watering, ensure good drainage/airflow, plant resistant varieties."
+  },
+  "Tomato_Leaf_Mold": {
+    "crop": "Tomato", "disease": "Leaf Mold",
+    "symptoms": "Pale yellow spots on upper leaf surface, olive-green to grayish mold on undersides.",
+    "treatment": "Improve ventilation, apply fungicide if severe, remove infected leaves.",
+    "prevention": "Reduce humidity in greenhouse/field, avoid leaf wetness, ensure spacing."
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "crop": "Tomato", "disease": "Septoria Leaf Spot",
+    "symptoms": "Small circular spots with dark borders and light gray centers, mainly on lower leaves.",
+    "treatment": "Apply fungicide, remove infected lower leaves, avoid overhead watering.",
+    "prevention": "Crop rotation, mulching, remove plant debris after harvest."
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "crop": "Tomato", "disease": "Spider Mites (Two-Spotted)",
+    "symptoms": "Fine yellow stippling on leaves, fine webbing visible, leaves turn bronze/dry in severe cases.",
+    "treatment": "Apply miticide or insecticidal soap, increase humidity, introduce predatory mites.",
+    "prevention": "Avoid drought stress, regularly hose down plants, monitor early in hot dry weather."
+  },
+  "Tomato__Target_Spot": {
+    "crop": "Tomato", "disease": "Target Spot",
+    "symptoms": "Brown circular lesions with concentric rings on leaves and fruit.",
+    "treatment": "Apply fungicide, remove infected debris.",
+    "prevention": "Crop rotation, avoid leaf wetness, proper spacing."
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "crop": "Tomato", "disease": "Yellow Leaf Curl Virus",
+    "symptoms": "Upward curling and yellowing of leaves, stunted growth, reduced fruit yield.",
+    "treatment": "No cure once infected - remove infected plants. Control whitefly vector with insecticides/sticky traps.",
+    "prevention": "Use virus-resistant varieties, control whiteflies, use reflective mulch, remove weeds nearby."
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "crop": "Tomato", "disease": "Mosaic Virus",
+    "symptoms": "Mottled light/dark green pattern on leaves, leaf curling, stunted plant growth.",
+    "treatment": "No chemical cure - remove and destroy infected plants immediately.",
+    "prevention": "Disinfect tools between plants, avoid tobacco use near plants, use resistant varieties."
+  },
+  "Tomato_healthy": {
+    "crop": "Tomato", "disease": "Healthy",
+    "symptoms": "No visible disease symptoms detected.",
+    "treatment": "No treatment needed.",
+    "prevention": "Continue regular monitoring, balanced fertilization, and proper irrigation."
+  },
+  "_default": {
+    "crop": "Unknown",
+    "disease": "Condition Detected",
+    "symptoms": "Visual symptoms detected on the leaf that don't exactly match our known database entries. Please consult a local agricultural expert for confirmation.",
+    "treatment": "Isolate the affected plant if possible. Consider a broad-spectrum fungicide/bactericide after expert confirmation.",
+    "prevention": "Maintain crop rotation, proper spacing, avoid leaf wetness, and monitor plants regularly."
+  }
+}

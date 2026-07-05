@@ -1,0 +1,1047 @@
+ <!-- <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Agricultural Policies & Schemes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #87A 0%, #87CEEB 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            border-bottom: 5px solid #228B22;
+        }
+
+        h1 {
+            color: #228B22;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            color: #2F4F4F;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #5F9EA0;
+            font-size: 1em;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 6px solid #87CEEB;
+        }
+
+        .intro-section h2 {
+            color: #228B22;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .policy-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border-top: 5px solid #228B22;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(144, 238, 144, 0.1) 0%, rgba(135, 206, 235, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(34, 139, 34, 0.3);
+            border-top-color: #87CEEB;
+        }
+
+        .policy-card:hover::before {
+            opacity: 1;
+        }
+
+        .policy-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .policy-card:hover .policy-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .policy-card h3 {
+            color: #228B22;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-card p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #90EE90, #87CEEB);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-benefits {
+            background: #F0FFF0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #90EE90;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-benefits h4 {
+            color: #228B22;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .policy-benefits ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-benefits li {
+            color: #555;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .policy-benefits li::before {
+            content: "✓";
+            color: #228B22;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .link-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #E0F7E0, #E0F4FF);
+            border-radius: 10px;
+            font-weight: bold;
+            color: #228B22;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-indicator::after {
+            content: "→";
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .policy-card:hover .link-indicator::after {
+            transform: translateX(10px);
+        }
+
+        footer {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid #228B22;
+        }
+
+        footer p {
+            color: #555;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 data-i18n="nav_advisory">🌾 Government Agricultural Policies & Schemes</h1>
+            <p class="tagline">Empowering Farmers Through Government Initiatives</p>
+            <p class="subtitle">Click on any policy card to visit the official government website</p>
+        </header>
+
+        <div class="intro-section">
+            <h2>About Advisory Services</h2>
+            <p>Access comprehensive information about various government schemes, subsidies, and policies designed to support farmers across India. Stay informed about the latest initiatives and benefits available to enhance your agricultural productivity and income.</p>
+        </div>
+
+        <div class="policies-grid">
+            <div class="policy-card" onclick="window.open('https://pmkisan.gov.in/', '_blank')">
+                <span class="policy-icon">💰</span>
+                <span class="policy-badge">Income Support</span>
+                <h3>PM-KISAN Scheme</h3>
+                <p>Pradhan Mantri Kisan Samman Nidhi provides income support of ₹6,000 per year to all landholding farmer families across India in three equal installments.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Direct cash transfer of ₹2,000 every 4 months</li>
+                        <li>No application fee required</li>
+                        <li>Covers all farmer families</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://pmfby.gov.in/', '_blank')">
+                <span class="policy-icon">🛡️</span>
+                <span class="policy-badge">Crop Insurance</span>
+                <h3>Pradhan Mantri Fasal Bima Yojana</h3>
+                <p>Comprehensive crop insurance scheme providing financial support to farmers suffering crop loss/damage due to unforeseen events.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Low premium rates (1.5-2% for farmers)</li>
+                        <li>Coverage for natural calamities</li>
+                        <li>Quick claim settlement</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://agricoop.nic.in/en/PKVY', '_blank')">
+                <span class="policy-icon">🌱</span>
+                <span class="policy-badge">Organic Farming</span>
+                <h3>Paramparagat Krishi Vikas Yojana</h3>
+                <p>Promotes organic farming and encourages sustainable agricultural practices through financial assistance and training programs.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>₹50,000 per hectare assistance</li>
+                        <li>Cluster-based approach</li>
+                        <li>Organic certification support</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://pmksy.gov.in/', '_blank')">
+                <span class="policy-icon">💧</span>
+                <span class="policy-badge">Irrigation</span>
+                <h3>Pradhan Mantri Krishi Sinchayee Yojana</h3>
+                <p>Aims to expand cultivated area with assured irrigation, improve water use efficiency, and promote sustainable water conservation practices.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Drip and sprinkler irrigation subsidy</li>
+                        <li>Watershed development support</li>
+                        <li>Per Drop More Crop initiative</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://www.myscheme.gov.in/schemes/smam', '_blank')">
+                <span class="policy-icon">🚜</span>
+                <span class="policy-badge">Mechanization</span>
+                <h3>Sub-Mission on Agricultural Mechanization</h3>
+                <p>Promotes farm mechanization to increase productivity and reduce drudgery of farm operations through subsidies on agricultural equipment.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>40-50% subsidy on farm equipment</li>
+                        <li>Custom Hiring Centers support</li>
+                        <li>Hi-tech hub establishment</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://mksp.gov.in/', '_blank')">
+                <span class="policy-icon">🌾</span>
+                <span class="policy-badge">Seed Distribution</span>
+                <h3>Mini Kit Programme</h3>
+                <p>Distribution of quality seeds of newly released varieties to farmers for demonstration and popularization of improved crop varieties.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Free quality seed distribution</li>
+                        <li>Latest variety demonstration</li>
+                        <li>Technical guidance included</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://sfacindia.com/', '_blank')">
+                <span class="policy-icon">🏦</span>
+                <span class="policy-badge">Credit Facility</span>
+                <h3>Kisan Credit Card Scheme</h3>
+                <p>Provides timely and adequate credit support to farmers for cultivation and other agricultural activities at concessional interest rates.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Easy access to credit up to ₹3 lakh</li>
+                        <li>Interest subvention of 2%</li>
+                        <li>Flexible repayment options</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://www.ssy.myscheme.gov.in/', '_blank')">
+                <span class="policy-icon">🌻</span>
+                <span class="policy-badge">Oilseeds</span>
+                <h3>National Mission on Edible Oils - Oil Palm</h3>
+                <p>Promotes oil palm cultivation to reduce import dependency and increase domestic production of edible oils with attractive financial assistance.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Planting subsidy up to ₹1.32 lakh/ha</li>
+                        <li>Assured price mechanism</li>
+                        <li>Technical support and training</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://agricoop.nic.in/en/SHM', '_blank')">
+                <span class="policy-icon">🥕</span>
+                <span class="policy-badge">Horticulture</span>
+                <h3>Mission for Integrated Development of Horticulture</h3>
+                <p>Holistic growth of horticulture sector covering fruits, vegetables, flowers, spices, plantation crops, and aromatic plants.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Protected cultivation subsidy</li>
+                        <li>Post-harvest management support</li>
+                        <li>Marketing infrastructure development</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://www.mssrf.org/', '_blank')">
+                <span class="policy-icon">📱</span>
+                <span class="policy-badge">Technology</span>
+                <h3>Digital Agriculture Mission</h3>
+                <p>Leverages technology for better farm management through AI, IoT, and digital platforms to enhance agricultural productivity.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Digital farm advisory services</li>
+                        <li>Farmer database creation</li>
+                        <li>Precision farming support</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://www.enam.gov.in/', '_blank')">
+                <span class="policy-icon">📊</span>
+                <span class="policy-badge">Marketing</span>
+                <h3>e-NAM (National Agriculture Market)</h3>
+                <p>Online trading platform for agricultural commodities connecting APMCs across India for transparent price discovery and better market access.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Pan-India market access</li>
+                        <li>Better price realization</li>
+                        <li>Reduced transaction costs</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="window.open('https://dbt.mahakosh.gov.in/DBT/', '_blank')">
+                <span class="policy-icon">🌿</span>
+                <span class="policy-badge">Soil Health</span>
+                <h3>Soil Health Card Scheme</h3>
+                <p>Issues Soil Health Cards to farmers every 2 years with nutrient status and recommendations for soil improvement and balanced fertilizer use.</p>
+                <div class="policy-benefits">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Free soil testing facility</li>
+                        <li>Customized fertilizer recommendations</li>
+                        <li>Improves crop productivity</li>
+                    </ul>
+                </div>
+                <div class="link-indicator">
+                    Visit Official Portal
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>🌾 Government of India - Ministry of Agriculture & Farmers Welfare</strong></p>
+            <p>For more information, visit: <strong>agricoop.nic.in</strong> | Helpline: <strong>1800-180-1551</strong></p>
+            <p style="margin-top: 15px; color: #228B22;">Click on any policy card above to visit the official government website for detailed information and application procedures.</p>
+        </footer>
+    </div>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Agricultural Policies & Schemes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #10b981;
+            --secondary-color: #3b82f6;
+            --danger-color: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Content Page Styles */
+        .content-page {
+            padding: 40px 0;
+            min-height: calc(100vh - 100px);
+        }
+
+        .content-page h1 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+
+        .content-page > .container > p {
+            margin-bottom: 30px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .subtitle {
+            color: var(--secondary-color);
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        /* Policies Grid */
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+            border-top-color: var(--secondary-color);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .policy-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover .policy-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .policy-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.4em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-benefits {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .policy-benefits h4 {
+            color: var(--primary-color);
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .policy-benefits ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-benefits li {
+            color: var(--gray);
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .policy-benefits li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .link-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 12px 16px;
+            background: var(--light);
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .card:hover .link-indicator {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .link-indicator::after {
+            content: "→";
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .link-indicator::after {
+            transform: translateX(10px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-page h1 {
+                font-size: 2rem;
+            }
+
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">🌾 Farmer Advisory</div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href ="advisory-services.html">Advisory Services</a>
+                <a href="crop-recommendation.html">Crop Recommendation</a>
+                <a href="disease-detection.html">Disease Detection</a>
+                <a href="chat.html">Chat Assistant</a>
+                <a href="login.html" class="btn-primary">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-page">
+        <div class="container">
+            <h1>🌾 Government Agricultural Policies & Schemes</h1>
+            <p>Access comprehensive information about various government schemes, subsidies, and policies designed to support farmers across India. Stay informed about the latest initiatives and benefits available to enhance your agricultural productivity and income.</p>
+            <p class="subtitle">Click on any policy card to visit the official government website</p>
+
+            <!-- Policies Grid -->
+            <div class="policies-grid">
+                <div class="card" onclick="window.open('https://pmkisan.gov.in/', '_blank')">
+                    <span class="policy-icon">💰</span>
+                    <span class="policy-badge">Income Support</span>
+                    <h3>PM-KISAN Scheme</h3>
+                    <p>Pradhan Mantri Kisan Samman Nidhi provides income support of ₹6,000 per year to all landholding farmer families across India in three equal installments.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Direct cash transfer of ₹2,000 every 4 months</li>
+                            <li>No application fee required</li>
+                            <li>Covers all farmer families</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://pmfby.gov.in/', '_blank')">
+                    <span class="policy-icon">🛡️</span>
+                    <span class="policy-badge">Crop Insurance</span>
+                    <h3>Pradhan Mantri Fasal Bima Yojana</h3>
+                    <p>Comprehensive crop insurance scheme providing financial support to farmers suffering crop loss/damage due to unforeseen events.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Low premium rates (1.5-2% for farmers)</li>
+                            <li>Coverage for natural calamities</li>
+                            <li>Quick claim settlement</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://agricoop.nic.in/en/PKVY', '_blank')">
+                    <span class="policy-icon">🌱</span>
+                    <span class="policy-badge">Organic Farming</span>
+                    <h3>Paramparagat Krishi Vikas Yojana</h3>
+                    <p>Promotes organic farming and encourages sustainable agricultural practices through financial assistance and training programs.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>₹50,000 per hectare assistance</li>
+                            <li>Cluster-based approach</li>
+                            <li>Organic certification support</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://pmksy.gov.in/', '_blank')">
+                    <span class="policy-icon">💧</span>
+                    <span class="policy-badge">Irrigation</span>
+                    <h3>Pradhan Mantri Krishi Sinchayee Yojana</h3>
+                    <p>Aims to expand cultivated area with assured irrigation, improve water use efficiency, and promote sustainable water conservation practices.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Drip and sprinkler irrigation subsidy</li>
+                            <li>Watershed development support</li>
+                            <li>Per Drop More Crop initiative</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://www.myscheme.gov.in/schemes/smam', '_blank')">
+                    <span class="policy-icon">🚜</span>
+                    <span class="policy-badge">Mechanization</span>
+                    <h3>Sub-Mission on Agricultural Mechanization</h3>
+                    <p>Promotes farm mechanization to increase productivity and reduce drudgery of farm operations through subsidies on agricultural equipment.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>40-50% subsidy on farm equipment</li>
+                            <li>Custom Hiring Centers support</li>
+                            <li>Hi-tech hub establishment</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://mksp.gov.in/', '_blank')">
+                    <span class="policy-icon">🌾</span>
+                    <span class="policy-badge">Seed Distribution</span>
+                    <h3>Mini Kit Programme</h3>
+                    <p>Distribution of quality seeds of newly released varieties to farmers for demonstration and popularization of improved crop varieties.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Free quality seed distribution</li>
+                            <li>Latest variety demonstration</li>
+                            <li>Technical guidance included</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://sfacindia.com/', '_blank')">
+                    <span class="policy-icon">🏦</span>
+                    <span class="policy-badge">Credit Facility</span>
+                    <h3>Kisan Credit Card Scheme</h3>
+                    <p>Provides timely and adequate credit support to farmers for cultivation and other agricultural activities at concessional interest rates.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Easy access to credit up to ₹3 lakh</li>
+                            <li>Interest subvention of 2%</li>
+                            <li>Flexible repayment options</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://www.ssy.myscheme.gov.in/', '_blank')">
+                    <span class="policy-icon">🌻</span>
+                    <span class="policy-badge">Oilseeds</span>
+                    <h3>National Mission on Edible Oils - Oil Palm</h3>
+                    <p>Promotes oil palm cultivation to reduce import dependency and increase domestic production of edible oils with attractive financial assistance.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Planting subsidy up to ₹1.32 lakh/ha</li>
+                            <li>Assured price mechanism</li>
+                            <li>Technical support and training</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://agricoop.nic.in/en/SHM', '_blank')">
+                    <span class="policy-icon">🥕</span>
+                    <span class="policy-badge">Horticulture</span>
+                    <h3>Mission for Integrated Development of Horticulture</h3>
+                    <p>Holistic growth of horticulture sector covering fruits, vegetables, flowers, spices, plantation crops, and aromatic plants.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Protected cultivation subsidy</li>
+                            <li>Post-harvest management support</li>
+                            <li>Marketing infrastructure development</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://www.mssrf.org/', '_blank')">
+                    <span class="policy-icon">📱</span>
+                    <span class="policy-badge">Technology</span>
+                    <h3>Digital Agriculture Mission</h3>
+                    <p>Leverages technology for better farm management through AI, IoT, and digital platforms to enhance agricultural productivity.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Digital farm advisory services</li>
+                            <li>Farmer database creation</li>
+                            <li>Precision farming support</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://www.enam.gov.in/', '_blank')">
+                    <span class="policy-icon">📊</span>
+                    <span class="policy-badge">Marketing</span>
+                    <h3>e-NAM (National Agriculture Market)</h3>
+                    <p>Online trading platform for agricultural commodities connecting APMCs across India for transparent price discovery and better market access.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Pan-India market access</li>
+                            <li>Better price realization</li>
+                            <li>Reduced transaction costs</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://dbt.mahakosh.gov.in/DBT/', '_blank')">
+                    <span class="policy-icon">🌿</span>
+                    <span class="policy-badge">Soil Health</span>
+                    <h3>Soil Health Card Scheme</h3>
+                    <p>Issues Soil Health Cards to farmers every 2 years with nutrient status and recommendations for soil improvement and balanced fertilizer use.</p>
+                    <div class="policy-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul>
+                            <li>Free soil testing facility</li>
+                            <li>Customized fertilizer recommendations</li>
+                            <li>Improves crop productivity</li>
+                        </ul>
+                    </div>
+                    <div class="link-indicator">
+                        Visit Official Portal
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>🌾 Government of India - Ministry of Agriculture & Farmers Welfare</strong></p>
+            <p>For more information, visit: <strong>agricoop.nic.in</strong> | Helpline: <strong>1800-180-1551</strong></p>
+        </div>
+    </footer>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

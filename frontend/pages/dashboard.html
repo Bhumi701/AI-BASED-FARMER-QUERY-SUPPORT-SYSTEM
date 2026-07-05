@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Farmer Advisory</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" data-i18n="nav_brand">🌾 Farmer Advisory</div>
+            <div class="nav-links">
+                <a href ="advisory-services.html" data-i18n="nav_advisory">Advisory Services</a>
+                <a href="crop-recommendation.html" data-i18n="nav_crop">Crop Recommendation</a>
+                <a href="disease-detection.html" data-i18n="nav_disease">Disease Detection</a>
+                <a href="chat.html" data-i18n="nav_chat">Chat Assistant</a>
+
+                <div class="lang-switcher" id="dashboardLanguageSwitcher">
+                    <select id="dashboardLanguageSelector" class="lang-select" aria-label="Language">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="ml">Malayalam</option>
+                    </select>
+                </div>
+
+                <button onclick="logout()" class="btn-secondary" data-i18n="btn_logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1 data-i18n="dashboard_welcome">Welcome, <span id="userName"></span>!</h1>
+                <p data-i18n="dashboard_subtitle">Manage your farm and get personalized recommendations</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Quick Actions -->
+                <div class="card">
+                    <h3 data-i18n="quick_actions">Quick Actions</h3>
+                    <div class="quick-actions">
+                        <a href="crop-recommendation.html" class="action-btn">
+                            <span class="icon">🌱</span>
+                            <span data-i18n="get_crop_recommendation">Get Crop Recommendation</span>
+                        </a>
+                        <a href="advisory-services.html" class="action-btn">
+                            <span class="icon">📝</span>
+                            <span data-i18n="advisory_services">Advisory Services</span>
+                        </a>
+                        <a href="disease-detection.html" class="action-btn">
+                            <span class="icon">🔬</span>
+                            <span data-i18n="detect_disease">Detect Disease</span>
+                        </a>
+                        <a href="chat.html" class="action-btn">
+                            <span class="icon">💬</span>
+                            <span data-i18n="chat_with_ai">Chat with AI</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Weather Widget -->
+                <div class="card">
+                    <h3 data-i18n="weather_widget">Current Weather</h3>
+                    <div id="weatherWidget">
+                        <p data-i18n="loading">Loading weather data...</p>
+                    </div>
+                </div>
+
+                <!-- Recent Recommendations -->
+                <div class="card full-width">
+                    <h3 data-i18n="recent_recommendations">Recent Crop Recommendations</h3>
+                    <div id="recentRecommendations">
+                        <p data-i18n="loading">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Recent Detections -->
+                <div class="card full-width">
+                    <h3 data-i18n="recent_detections">Recent Disease Detections</h3>
+                    <div id="recentDetections">
+                        <p data-i18n="loading">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../config.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Check authentication
+        if (!Utils.isAuthenticated()) {
+            window.location.href = 'login.html';
+        }
+
+        // Load user data
+        const user = Utils.getUser();
+        if (user) {
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userNameNav').textContent = user.name;
+        }
+
+        // Logout function
+        function logout() {
+            Utils.clearAuth();
+            Utils.showNotification(I18n.t('logged_out'));
+            setTimeout(() => window.location.href = 'login.html', 1000);
+        }
+
+        // Load dashboard data
+        async function loadDashboard() {
+            await loadWeather();
+            await loadRecentRecommendations();
+            await loadRecentDetections();
+        }
+
+        // Load weather
+        async function loadWeather() {
+            try {
+                const response = await fetch(`${CONFIG.API_URL}${CONFIG.ENDPOINTS.WEATHER.CURRENT}?city=Delhi`, {
+                    headers: {
+                        'Authorization': `Bearer ${Utils.getToken()}`
+                    }
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    const weather = data.weather;
+                    document.getElementById('weatherWidget').innerHTML = `
+                        <div class="weather-info">
+                            <div class="weather-temp">${Math.round(weather.temperature)}°C</div>
+                            <div class="weather-desc">${weather.description}</div>
+                            <div class="weather-details">
+                                <span>💧 ${weather.humidity}%</span>
+                                <span>💨 ${weather.wind_speed} m/s</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('weatherWidget').innerHTML = '<p>Unable to load weather</p>';
+            }
+        }
+
+        // Load recent recommendations
+        async function loadRecentRecommendations() {
+            try {
+                const response = await fetch(`${CONFIG.API_URL}${CONFIG.ENDPOINTS.CROP.HISTORY}`, {
+                    headers: {
+                        'Authorization': `Bearer ${Utils.getToken()}`
+                    }
+                });
+                const data = await response.json();
+                
+                if (data.success && data.history.length > 0) {
+                    document.getElementById('recentRecommendations').innerHTML = data.history.slice(0, 3).map(rec => `
+                        <div class="history-item">
+                            <span class="crop-name">${rec.crop}</span>
+                            <span class="confidence">${rec.confidence}% confidence</span>
+                            <span class="date">${Utils.formatDate(rec.date)}</span>
+                        </div>
+                    `).join('');
+                } else {
+                    document.getElementById('recentRecommendations').innerHTML = `<p>${I18n.t('no_recommendations')}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('recentRecommendations').innerHTML = `<p>${I18n.t('unable_load')}</p>`;
+            }
+        }
+
+        // Load recent detections
+        async function loadRecentDetections() {
+            try {
+                const response = await fetch(`${CONFIG.API_URL}${CONFIG.ENDPOINTS.DISEASE.HISTORY}`, {
+                    headers: {
+                        'Authorization': `Bearer ${Utils.getToken()}`
+                    }
+                });
+                const data = await response.json();
+                
+                if (data.success && data.history.length > 0) {
+                    document.getElementById('recentDetections').innerHTML = data.history.slice(0, 3).map(det => `
+                        <div class="history-item">
+                            <span class="crop-name">${det.crop}</span>
+                            <span class="disease-name">${det.disease}</span>
+                            <span class="confidence">${det.confidence}% confidence</span>
+                            <span class="date">${Utils.formatDate(det.date)}</span>
+                        </div>
+                    `).join('');
+                } else {
+                    document.getElementById('recentDetections').innerHTML = `<p>${I18n.t('no_detections')}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('recentDetections').innerHTML = `<p>${I18n.t('unable_load')}</p>`;
+            }
+        }
+
+        // Initialize dashboard
+        loadDashboard();
+    </script>
+</body>
+</html>

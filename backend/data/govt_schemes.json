@@ -1,0 +1,50 @@
+[
+  {
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "summary": "Provides Rs. 6,000 per year to eligible farmer families, paid in 3 equal installments of Rs. 2,000 directly into bank accounts.",
+    "eligibility": "All landholding farmer families, subject to exclusion criteria (income tax payers, institutional landholders, etc).",
+    "link": "https://pmkisan.gov.in"
+  },
+  {
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "summary": "Crop insurance scheme providing financial support to farmers in case of crop failure due to natural calamities, pests, or diseases.",
+    "eligibility": "All farmers growing notified crops in notified areas, both loanee and non-loanee farmers.",
+    "link": "https://pmfby.gov.in"
+  },
+  {
+    "name": "Kisan Credit Card (KCC)",
+    "summary": "Provides farmers with affordable credit for crop production, post-harvest expenses, and farm asset maintenance at subsidized interest rates.",
+    "eligibility": "All farmers including tenant farmers, oral lessees, and sharecroppers.",
+    "link": "https://www.myscheme.gov.in/schemes/kcc"
+  },
+  {
+    "name": "Soil Health Card Scheme",
+    "summary": "Provides farmers with soil nutrient status and recommendations on appropriate dosage of nutrients for improving soil health and fertility.",
+    "eligibility": "All farmers; card issued every 2 years per land holding.",
+    "link": "https://soilhealth.dac.gov.in"
+  },
+  {
+    "name": "National Agriculture Market (e-NAM)",
+    "summary": "Online trading platform connecting existing APMC mandis to create a unified national market for agricultural commodities.",
+    "eligibility": "Registered farmers and traders through local APMC mandis.",
+    "link": "https://enam.gov.in"
+  },
+  {
+    "name": "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+    "summary": "Aims to improve farm water use efficiency through micro-irrigation (drip/sprinkler) with subsidy support.",
+    "eligibility": "All categories of farmers, with special focus on small and marginal farmers.",
+    "link": "https://pmksy.gov.in"
+  },
+  {
+    "name": "Rashtriya Krishi Vikas Yojana (RKVY)",
+    "summary": "State-driven scheme to promote holistic development of agriculture and allied sectors through infrastructure and capacity building.",
+    "eligibility": "State governments implement projects; benefits flow to farmers through state schemes.",
+    "link": "https://rkvy.nic.in"
+  },
+  {
+    "name": "Paramparagat Krishi Vikas Yojana (PKVY)",
+    "summary": "Promotes organic farming through cluster approach, providing financial assistance for organic inputs and certification.",
+    "eligibility": "Farmer groups/clusters willing to adopt organic farming practices.",
+    "link": "https://pgsindia-ncof.gov.in"
+  }
+]
