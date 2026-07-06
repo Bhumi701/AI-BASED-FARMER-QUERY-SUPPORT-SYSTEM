@@ -7,7 +7,7 @@ const CONFIG = {
     // e.g. "https://agri-ai-backend.onrender.com"
     API_URL: (window.__AGRI_API_URL__ || (
         ["localhost", "127.0.0.1"].includes(window.location.hostname)
-            ? "http://localhost:8080"
+            ? "http://localhost:5000"
             : "https://agri-ai-backend-7zmv.onrender.com"
     )),
 
